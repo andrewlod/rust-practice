@@ -1,17 +1,22 @@
 mod gcd;
 mod max;
 mod avg;
+mod rng;
 mod coin;
 mod block;
+mod shapes;
 mod anagram;
+mod disease;
 mod product;
 mod is_prime;
 mod portfolio;
 mod sum_evens;
+mod file_manip;
 mod closest_sum;
 mod move_zeroes;
 mod count_to_10;
 mod rotate_array;
+mod guessing_game;
 mod buy_sell_stock;
 mod is_one_distant;
 mod reverse_string;
@@ -115,4 +120,16 @@ fn main() {
     product::demo();
 
     block::demo();
+
+    file_manip::file_manip();
+    println!("{}", file_manip::count_lines("./assets/data.txt"));
+
+    rng::generate_random_numbers();
+
+    // guessing_game::guessing_game();
+    // guessing_game::word_guessing_game();
+
+    shapes::demo();
+
+    disease::demo();
 }
