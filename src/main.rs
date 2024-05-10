@@ -1,7 +1,10 @@
 mod gcd;
 mod max;
 mod avg;
+mod coin;
+mod block;
 mod anagram;
+mod product;
 mod is_prime;
 mod portfolio;
 mod sum_evens;
@@ -106,4 +109,10 @@ fn main() {
     println!("{}", uppercase_count::uppercase_count("HeLlo YouTuBe"));
 
     portfolio::demo();
+
+    coin::demo();
+
+    product::demo();
+
+    block::demo();
 }
