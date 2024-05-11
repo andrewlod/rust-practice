@@ -1,9 +1,12 @@
+mod it;
 mod gcd;
 mod max;
 mod avg;
 mod rng;
 mod coin;
 mod block;
+mod travel;
+mod social;
 mod shapes;
 mod anagram;
 mod disease;
@@ -14,6 +17,7 @@ mod is_prime;
 mod portfolio;
 mod sum_evens;
 mod file_manip;
+mod battleship;
 mod closest_sum;
 mod move_zeroes;
 mod count_to_10;
@@ -27,6 +31,7 @@ mod compress_string;
 mod uppercase_count;
 mod construct_string;
 mod real_state_broker;
+mod find_word_in_board;
 mod array_combinations;
 mod array_intersection;
 mod contains_duplicates;
@@ -144,4 +149,31 @@ fn main() {
     finance::demo();
 
     account::demo();
+
+    social::demo();
+
+    travel::demo();
+
+    println!("{}", find_word_in_board::word_exists_in_board(&vec![
+        vec!['A', 'B', 'C', 'E'],
+        vec!['S', 'F', 'C', 'S'],
+        vec!['A', 'D', 'E', 'E']
+    ], "SEE"));
+    println!("{}", find_word_in_board::word_exists_in_board(&vec![
+        vec!['A', 'B', 'C', 'E'],
+        vec!['S', 'F', 'C', 'S'],
+        vec!['A', 'D', 'E', 'E']
+    ], "SEA"));
+    println!("{}", find_word_in_board::word_exists_in_board(&vec![
+        vec!['A', 'B', 'C', 'E'],
+        vec!['S', 'F', 'C', 'S'],
+        vec!['A', 'D', 'E', 'E']
+    ], "ABFCEE"));
+    println!("{}", find_word_in_board::word_exists_in_board(&vec![
+        vec!['A', 'B', 'C', 'E'],
+        vec!['S', 'F', 'C', 'S'],
+        vec!['A', 'D', 'E', 'E']
+    ], "ABFCEC"));
+
+    battleship::main();
 }
