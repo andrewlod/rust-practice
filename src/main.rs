@@ -7,7 +7,9 @@ mod block;
 mod shapes;
 mod anagram;
 mod disease;
+mod finance;
 mod product;
+mod account;
 mod is_prime;
 mod portfolio;
 mod sum_evens;
@@ -20,9 +22,11 @@ mod guessing_game;
 mod buy_sell_stock;
 mod is_one_distant;
 mod reverse_string;
+mod math_operations;
 mod compress_string;
 mod uppercase_count;
 mod construct_string;
+mod real_state_broker;
 mod array_combinations;
 mod array_intersection;
 mod contains_duplicates;
@@ -132,4 +136,12 @@ fn main() {
     shapes::demo();
 
     disease::demo();
+
+    real_state_broker::demo();
+
+    math_operations::demo();
+
+    finance::demo();
+
+    account::demo();
 }
