@@ -35,6 +35,7 @@ mod uppercase_count;
 mod construct_string;
 mod pattern_matching;
 mod real_state_broker;
+mod producer_consumer;
 mod find_word_in_board;
 mod array_combinations;
 mod array_intersection;
@@ -194,4 +195,6 @@ fn main() {
     pattern_matching::match_input(&input);
     let input = 4;
     pattern_matching::match_input(&input);
+
+    producer_consumer::demo();
 }
