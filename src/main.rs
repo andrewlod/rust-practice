@@ -21,7 +21,10 @@ mod battleship;
 mod closest_sum;
 mod move_zeroes;
 mod count_to_10;
+mod bubble_sort;
 mod rotate_array;
+mod linear_search;
+mod binary_search;
 mod guessing_game;
 mod buy_sell_stock;
 mod is_one_distant;
@@ -30,6 +33,7 @@ mod math_operations;
 mod compress_string;
 mod uppercase_count;
 mod construct_string;
+mod pattern_matching;
 mod real_state_broker;
 mod find_word_in_board;
 mod array_combinations;
@@ -175,5 +179,19 @@ fn main() {
         vec!['A', 'D', 'E', 'E']
     ], "ABFCEC"));
 
-    battleship::main();
+    //battleship::main();
+
+    println!("{:?}", bubble_sort::bubble_sort());
+
+    let arr = vec![1,38,2,3,564,2,67,2,76,2,8,45];
+    println!("{}", linear_search::linear_search(&arr, 76));
+    println!("{}", linear_search::linear_search(&arr, 0));
+    
+    println!("{}", binary_search::binary_search(&arr, 76));
+    println!("{}", binary_search::binary_search(&arr, 0));
+
+    let input = String::from("abcdskj");
+    pattern_matching::match_input(&input);
+    let input = 4;
+    pattern_matching::match_input(&input);
 }
