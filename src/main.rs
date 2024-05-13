@@ -23,6 +23,7 @@ mod battleship;
 mod closest_sum;
 mod move_zeroes;
 mod count_to_10;
+mod tokio_async;
 mod bubble_sort;
 mod rotate_array;
 mod linear_search;
@@ -51,7 +52,8 @@ mod is_string_palindrome;
 mod has_unique_characters;
 mod is_integer_palindrome;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     println!("{}", gcd::gcd(16, 40));
     
     count_to_10::count_for(10);
@@ -230,4 +232,10 @@ fn main() {
         is_prime_parallel::is_prime_parallel(*num);
     }
     println!("Time elapsed (ms, parallel): {}", now.elapsed().as_millis());
+
+    let task1 = tokio::spawn(tokio_async::do_something(2));
+    let task2 = tokio::spawn(tokio_async::do_something(3));
+
+    task1.await.unwrap();
+    task2.await.unwrap();
 }
