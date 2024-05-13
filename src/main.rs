@@ -1,3 +1,5 @@
+use std::time::Instant;
+
 mod it;
 mod gcd;
 mod max;
@@ -34,8 +36,10 @@ mod compress_string;
 mod uppercase_count;
 mod construct_string;
 mod pattern_matching;
+mod is_prime_parallel;
 mod real_state_broker;
 mod producer_consumer;
+mod multiple_producers;
 mod find_word_in_board;
 mod array_combinations;
 mod array_intersection;
@@ -196,5 +200,34 @@ fn main() {
     let input = 4;
     pattern_matching::match_input(&input);
 
-    producer_consumer::demo();
+    //producer_consumer::demo();
+
+    multiple_producers::demo();
+
+    println!("{}", is_prime_parallel::is_prime(2));
+    println!("{}", is_prime_parallel::is_prime(3));
+    println!("{}", is_prime_parallel::is_prime(4));
+    println!("{}", is_prime_parallel::is_prime(13));
+    println!("{}", is_prime_parallel::is_prime(23));
+    println!("{}", is_prime_parallel::is_prime(53));
+
+    println!("{}", is_prime_parallel::is_prime_parallel(2));
+    println!("{}", is_prime_parallel::is_prime_parallel(3));
+    println!("{}", is_prime_parallel::is_prime_parallel(4));
+    println!("{}", is_prime_parallel::is_prime_parallel(13));
+    println!("{}", is_prime_parallel::is_prime_parallel(23));
+    println!("{}", is_prime_parallel::is_prime_parallel(53));
+
+    let arr: Vec<u32> = (2..2000).collect();
+    let now = Instant::now();
+    for num in &arr {
+        is_prime_parallel::is_prime(*num);
+    }
+    println!("Time elapsed (ms, sequential): {}", now.elapsed().as_millis());
+
+    let now = Instant::now();
+    for num in &arr {
+        is_prime_parallel::is_prime_parallel(*num);
+    }
+    println!("Time elapsed (ms, parallel): {}", now.elapsed().as_millis());
 }
