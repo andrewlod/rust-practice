@@ -6,6 +6,7 @@ mod max;
 mod avg;
 mod rng;
 mod coin;
+mod point;
 mod block;
 mod travel;
 mod social;
@@ -17,15 +18,17 @@ mod product;
 mod account;
 mod is_prime;
 mod portfolio;
+mod rectangle;
 mod sum_evens;
 mod file_manip;
 mod battleship;
 mod closest_sum;
 mod move_zeroes;
 mod count_to_10;
-mod tokio_async;
 mod bubble_sort;
+mod tokio_async;
 mod rotate_array;
+mod tokyo_async_2;
 mod linear_search;
 mod binary_search;
 mod guessing_game;
@@ -238,4 +241,17 @@ async fn main() {
 
     task1.await.unwrap();
     task2.await.unwrap();
+
+    tokyo_async_2::demo().await;
+
+    match my_lib::echo("Hello, world!") {
+        Ok(s) => println!("Echo: {}", s),
+        Err(e) => println!("Error: {}", e),
+    }
+
+    match my_lib::echo("foobar") {
+        Ok(s) => println!("Echo: {}", s),
+        Err(e) => println!("Error: {}", e),
+    }
+
 }
