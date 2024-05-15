@@ -8,9 +8,12 @@ mod rng;
 mod coin;
 mod point;
 mod block;
+mod mixup;
+mod cards;
 mod travel;
 mod social;
 mod shapes;
+mod divider;
 mod anagram;
 mod disease;
 mod finance;
@@ -20,13 +23,16 @@ mod is_prime;
 mod portfolio;
 mod rectangle;
 mod sum_evens;
+mod repository;
 mod file_manip;
 mod battleship;
 mod closest_sum;
+mod greater_str;
 mod move_zeroes;
 mod count_to_10;
 mod bubble_sort;
 mod tokio_async;
+mod generic_list;
 mod rotate_array;
 mod tokyo_async_2;
 mod linear_search;
@@ -35,6 +41,7 @@ mod guessing_game;
 mod buy_sell_stock;
 mod is_one_distant;
 mod reverse_string;
+mod generic_largest;
 mod math_operations;
 mod compress_string;
 mod uppercase_count;
@@ -43,6 +50,7 @@ mod pattern_matching;
 mod is_prime_parallel;
 mod real_state_broker;
 mod producer_consumer;
+mod generic_reference;
 mod multiple_producers;
 mod find_word_in_board;
 mod array_combinations;
@@ -236,22 +244,26 @@ async fn main() {
     }
     println!("Time elapsed (ms, parallel): {}", now.elapsed().as_millis());
 
-    let task1 = tokio::spawn(tokio_async::do_something(2));
-    let task2 = tokio::spawn(tokio_async::do_something(3));
+    // let task1 = tokio::spawn(tokio_async::do_something(2));
+    // let task2 = tokio::spawn(tokio_async::do_something(3));
 
-    task1.await.unwrap();
-    task2.await.unwrap();
+    // task1.await.unwrap();
+    // task2.await.unwrap();
 
-    tokyo_async_2::demo().await;
+    // tokyo_async_2::demo().await;
 
-    match my_lib::echo("Hello, world!") {
-        Ok(s) => println!("Echo: {}", s),
-        Err(e) => println!("Error: {}", e),
-    }
+    // match my_lib::echo("Hello, world!") {
+    //     Ok(s) => println!("Echo: {}", s),
+    //     Err(e) => println!("Error: {}", e),
+    // }
 
-    match my_lib::echo("foobar") {
-        Ok(s) => println!("Echo: {}", s),
-        Err(e) => println!("Error: {}", e),
-    }
+    // match my_lib::echo("foobar") {
+    //     Ok(s) => println!("Echo: {}", s),
+    //     Err(e) => println!("Error: {}", e),
+    // }
 
+    let a = "hello";
+    let b = "world";
+    let pair: generic_reference::Pair<&str> = generic_reference::Pair::new(&a, &b);
+    println!("{} {}", pair.get_first(), pair.get_second());
 }
