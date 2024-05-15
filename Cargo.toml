@@ -12,3 +12,4 @@ rayon = "1.10.0"
 regex = "1.10.4"
 tokio = { version = "1.37.0", features = ["full"] }
 my-lib = { path = "my-lib/" }
+num-traits = "0.2.19"
