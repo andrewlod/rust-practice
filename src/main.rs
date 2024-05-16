@@ -10,11 +10,13 @@ mod point;
 mod block;
 mod mixup;
 mod cards;
+mod screen;
 mod travel;
 mod social;
 mod shapes;
 mod divider;
 mod anagram;
+mod summary;
 mod disease;
 mod finance;
 mod product;
@@ -266,4 +268,21 @@ async fn main() {
     let b = "world";
     let pair: generic_reference::Pair<&str> = generic_reference::Pair::new(&a, &b);
     println!("{} {}", pair.get_first(), pair.get_second());
+
+    let a = "hello";
+    summary::notify(a);
+    let b = String::from("world");
+    summary::notify(b);
+    let c = summary::News {
+        title: String::from("hello"),
+        content: String::from("world!")
+    };
+    summary::notify(c);
+
+    let mut screen = screen::Screen { components: Vec::new() };
+    screen.components.push(Box::new(screen::Button {}));
+    screen.components.push(Box::new(screen::TextBox {}));
+    screen.components.push(Box::new(screen::SelectBox {}));
+
+    screen.run();
 }
